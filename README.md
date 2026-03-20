@@ -27,3 +27,8 @@ uv run pytest test_robot.py
 ```bash
 pytest test_robot.py
 ```
+
+## To run the CLI:
+```bash
+python main.py --width_cm 10 --height_cm 20 --length_cm 30 --mass_kg 5
+```
