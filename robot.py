@@ -18,14 +18,14 @@ def is_bulky(width_cm: float, height_cm: float, length_cm: float) -> bool:
 
     return (width_cm * height_cm * length_cm) >= VOLUME_LIMIT_CM3
 
-def sort(width_cm: float, height_cm: float, length_cm: float, mass_in_kg: float) -> str:
+def sort(width_cm: float, height_cm: float, length_cm: float, mass_in_kg: float) -> Stacks:
     is_package_heavy = is_heavy(mass_in_kg)
     is_package_bulky = is_bulky(width_cm, height_cm, length_cm)
 
     if is_package_heavy and is_package_bulky:
-        return Stacks.REJECTED.value
+        return Stacks.REJECTED
 
     if is_package_heavy or is_package_bulky:
-        return Stacks.SPECIAL.value
+        return Stacks.SPECIAL
     
-    return Stacks.STANDARD.value
+    return Stacks.STANDARD
